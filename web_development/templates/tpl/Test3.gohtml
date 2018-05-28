@@ -1,1 +1,23 @@
-Test3
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Go lang Web Development</title>
+</head>
+  <body>
+    {{range .}}
+      <li>{{.}}</li>
+    {{end}}
+
+    <!-- to display with index number -->
+    {{range $index, $element := .}}
+      <li>{{$index}} - {{$element}}</li>
+    {{end}}
+
+
+    {{range $key, $val := .}}
+      <li>{{$key}} - {{$val}}</li>
+    {{end}}
+
+  </body>
+</html>
