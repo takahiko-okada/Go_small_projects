@@ -104,15 +104,37 @@ import "fmt"
 
 func main() {
   var a [3]string            // initiates an array of 3 strings
-  a[0] = "Hello"             // push a values
-  a[1] = "こんにちは"
-  a[2] = "Guten tag"
+  a[0] = "USA"               // push a values
+  a[1] = "Japan"
+  a[2] = "Germany"
 
   fmt.Println(a)             // the array itself can be printed
   fmt.Println(a[1])          // prints a specified item
 }
 ```
 
+### Slice
+#### Slices works as references to arrays
+#### A slice does not store any data, it shows a part of an array
+#### Modification to a slice will be reflected to its underlying array
 
+```go
+package main
+
+import "fmt"
+
+func main() {
+  nations := [3]string{
+    "USA",
+    "Japan",
+    "Germany",                  // Need a comma for the last item
+  }                             // Defined an array nations
+
+  s1 := nations[0:1]            // Slices created
+  s2 := nations[1:2]
+
+  fmt.Println(s1, s2, nations)
+}
+```
 
 
