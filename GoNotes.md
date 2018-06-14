@@ -40,4 +40,39 @@ func main() {
 
 ```
 
+#### Assigning Struct to a variable
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  p1 := Person{}
+  p1.Name = "James Bond"
+  p1.Age = 42
+  fmt.Println(p1.Name, p1.Age)
+}
+```
+
+#### Pointer to Struct
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  p1 := Person{"James Bond", 42}
+  v := &p1
+  v.Name = "007"                  // Go allows changing the value of p1
+                                  // without doing *v.Name
+  fmt.Println(p1)
+}
+```
+
+
+
+
+
 
