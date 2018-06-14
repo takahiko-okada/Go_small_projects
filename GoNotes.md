@@ -1,9 +1,7 @@
-GoNotes.md
+# Golang Notes
 
- # Golang Notes
-
- ## Pointers
- ### Pointers holds the memory address of the value
+## Pointers
+### Pointers holds the memory address of the value
 
 ```go
 package main
@@ -23,3 +21,23 @@ func main() {
 }
 
 ```
+## Structs
+### Struct is a collection of fields.
+
+```go
+package main
+
+import "fmt"
+
+type Person struct {
+  Name string      // field name, with Capital letter and value type
+  Age int
+}
+
+func main() {
+  fmt.Println(Person{"James Bond", 42}  // Prints a struct {"James Bond" 42}
+}
+
+```
+
+
