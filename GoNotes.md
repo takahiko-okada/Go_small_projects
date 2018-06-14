@@ -40,7 +40,7 @@ func main() {
 
 ```
 
-#### Assigning Struct to a variable
+### Assigning Struct to a variable
 
 ```go
 package main
@@ -55,7 +55,7 @@ func main() {
 }
 ```
 
-#### Pointer to Struct
+### Pointer to Struct
 
 ```go
 package main
@@ -71,7 +71,7 @@ func main() {
 }
 ```
 
-#### Struct Literals
+### Struct Literals
 
 ```go
 package main
@@ -94,6 +94,24 @@ func main() {
 
 ```
 
+### Array
+#### Array size cannot be changed later, whereas Slice allows this.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var a [3]string            // initiates an array of 3 strings
+  a[0] = "Hello"             // push a values
+  a[1] = "こんにちは"
+  a[2] = "Guten tag"
+
+  fmt.Println(a)             // the array itself can be printed
+  fmt.Println(a[1])          // prints a specified item
+}
+```
 
 
 
