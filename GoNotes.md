@@ -48,7 +48,7 @@ package main
 import "fmt"
 
 func main() {
-  p1 := Person{}
+  p1 := Person{}                   // Empty struct assign Name: "", Age: 0 by default
   p1.Name = "James Bond"
   p1.Age = 42
   fmt.Println(p1.Name, p1.Age)
@@ -71,6 +71,28 @@ func main() {
 }
 ```
 
+#### Struct Literals
+
+```go
+package main
+
+import "fmt"
+
+type Location struct {
+  lat, lng int
+}
+
+var (                     // Defining variables outside of func main
+  v1 = Location{50, 100}  // has type Location
+  v2 = Location{X: 70}    // Y:0 is implicit
+  p  = &Location{20, 90}  // has type *Location
+)
+
+func main() {
+  fmt.Println(v1, p, v2)
+}
+
+```
 
 
 
