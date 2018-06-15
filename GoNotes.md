@@ -1,5 +1,33 @@
 # Golang Notes
 
+[Pointers](#pointers)
+
+[Structs](#structs)
+  [Assigning Struct to a variable](#assigning-struct-to-a-variable)
+  [Pointer to Struct](#pointer-to-struct)
+  [Struct Literals](#struct-literals)
+
+[Array](#array)
+
+[Slice](#slice)
+
+[Functions](#functions)
+  [Arguments and Return Value Type](#arguments-and-return-value-type)
+  [Named Return Values](#named-return-values)
+
+[Variables](#variables)
+  [Variable declaration](#variable-declarations)
+
+[Types](#types)
+  [Basic types](#basic-types)
+  [Figuring out a variable's type](#figuring-out-a-variable's-type)
+
+[Type Conversion](#type-conversion)
+  [Int to String](#int-to-string)
+
+[Conventions](#conventions)
+  [Function Naming](#function-naming)
+
 ## Pointers
 ### Pointers holds the memory address of the value
 
@@ -136,5 +164,131 @@ func main() {
   fmt.Println(s1, s2, nations)
 }
 ```
+
+## Functions
+### Arguments and Return Value Type
+```go
+package main
+
+import "fmt"
+
+func add(x int, y int) int {                     // returns a value, single return value type
+  return x + y
+}
+
+func plusAndMinus(x int, y int) (int, int) {     // returns two values, two return value type
+  return x + y, x - y
+}
+
+func main() {
+  fmt.Println(add(222, 777))
+  fmt.Println(plusAndMinus(222, 777))
+}
+```
+
+### Named Return Values
+
+```go
+package main
+
+import "fmt"
+
+func split(total int) (x, y float64) {
+  x = float64(total) * 0.4            // int must be converted before multiplying it by a float
+  y = float64(total) * 0.6
+  return                              // return without argument returns the Named Return Values x, y
+}
+
+func main() {
+  fmt.Println(split(100))
+}
+```
+
+## Variables
+### Variable declaration
+
+```go
+package main
+
+import "fmt"
+
+var a, b bool
+var c, d = 1, "Yes"                  // Declaration With initializer(value), type can be omitted
+g := "Fish"                          // Short variable declaration
+
+func main() {
+  var e, f bool                      // Variable declaration can be done within functions
+  fmt.Println(a, b, c, d, e, f)
+}
+```
+
+## Types
+### Basic types
+
+```go
+bool
+
+string
+
+int  int8  int16  int32  int64
+uint uint8 uint16 uint32 uint64 uintptr
+
+byte // alias for uint8
+
+rune // alias for int32
+     // represents a Unicode code point
+
+float32 float64
+
+complex64 complex128
+```
+
+### Figuring out a variable's type
+```go
+package main
+
+import "fmt"
+
+func main() {
+  v := 100
+  fmt.Printf("v is of type %T\n", v)           // Printf(format string, a...interface{})(n int, err error)
+}
+```
+
+### Type Conversion
+#### Int to String
+```go
+package main
+
+import (
+  "fmt"
+  "strconv"                       // Use "strconv" package
+)
+
+func main() {
+  i := 5
+  s := strconv.Itoa(i)            // Then use "Itoa" function
+  fmt.Println(s)
+}
+```
+
+## Conventions
+### Function Naming
+```go
+// func only available within the package
+
+func internalUseOnly() {            // Lower Camel Case
+}
+
+// func to be exported
+
+func ExternalUsePossible() {        // Upper Camel Case
+}
+```
+
+
+
+
+
 
 
