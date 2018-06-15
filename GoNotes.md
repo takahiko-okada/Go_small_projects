@@ -1,34 +1,33 @@
 # Golang Notes
+##
 
 [Pointers](#pointers)
-
 [Structs](#structs)
   - [Assigning Struct to a variable](#assigning-struct-to-a-variable)
   - [Pointer to Struct](#pointer-to-struct)
   - [Struct Literals](#struct-literals)
-
 [Array](#array)
-
 [Slice](#slice)
-
 [Functions](#functions)
   - [Arguments and Return Value Type](#arguments-and-return-value-type)
   - [Named Return Values](#named-return-values)
-
 [Variables](#variables)
   - [Variable declaration](#variable-declarations)
-
 [Constants](#constants)
-
 [Types](#types)
   - [Basic types](#basic-types)
   - [Figuring out a variable's type](#figuring-out-a-variable's-type)
-
 [Type Conversion](#type-conversion)
   - [Int to String](#int-to-string)
-
 [Conventions](#conventions)
   - [Function Naming](#function-naming)
+
+[Loop]
+  - [For loop using init and post statements](#for-loop-using-init-and-post-statements)
+  - [For loop without init and post statements](#for-loop-without-init-and-post-statements)
+  - [While loop in Go](#while-loop-in-go)
+  - [Infinite loop](#infinite-loop)
+
 
 ## Pointers
 ### Pointers holds the memory address of the value
@@ -301,6 +300,60 @@ func internalUseOnly() {            // Lower Camel Case
 // func to be exported
 
 func ExternalUsePossible() {        // Upper Camel Case
+}
+```
+
+## Loop
+### For loop using init and post statements
+```go
+package main
+
+import "fmt"
+
+func main() {
+  sum := 0
+  for i := 0; i < 10; i++ {         // initial i is 0, i increases each time
+    sum += i
+  }
+  fmt.Println(sum)
+}
+
+```
+
+### For loop without init and post statements
+```go
+package main
+
+import "fmt"
+
+func main() {
+  sum := 1
+  for ; sum < 10; {
+    sum += sum                      // 2 => 4 => 8 => 16, loop ends when sum >= 10
+  }
+  fmt.Println(sum)
+}
+```
+
+### While loop (in Go)
+```go
+func main() {
+  sum := 0
+  for sum < 10 {                    // +1 each time to sum until 10
+    sum += 1
+  }
+  fmt.Println(sum)
+}
+```
+
+### Infinite loop
+
+```go
+package main
+
+func main() {
+  for {
+  }
 }
 ```
 
