@@ -3,30 +3,32 @@
 [Pointers](#pointers)
 
 [Structs](#structs)
-  [Assigning Struct to a variable](#assigning-struct-to-a-variable)
-  [Pointer to Struct](#pointer-to-struct)
-  [Struct Literals](#struct-literals)
+  - [Assigning Struct to a variable](#assigning-struct-to-a-variable)
+  - [Pointer to Struct](#pointer-to-struct)
+  - [Struct Literals](#struct-literals)
 
 [Array](#array)
 
 [Slice](#slice)
 
 [Functions](#functions)
-  [Arguments and Return Value Type](#arguments-and-return-value-type)
-  [Named Return Values](#named-return-values)
+  - [Arguments and Return Value Type](#arguments-and-return-value-type)
+  - [Named Return Values](#named-return-values)
 
 [Variables](#variables)
-  [Variable declaration](#variable-declarations)
+  - [Variable declaration](#variable-declarations)
+
+[Constants](#constants)
 
 [Types](#types)
-  [Basic types](#basic-types)
-  [Figuring out a variable's type](#figuring-out-a-variable's-type)
+  - [Basic types](#basic-types)
+  - [Figuring out a variable's type](#figuring-out-a-variable's-type)
 
 [Type Conversion](#type-conversion)
-  [Int to String](#int-to-string)
+  - [Int to String](#int-to-string)
 
 [Conventions](#conventions)
-  [Function Naming](#function-naming)
+  - [Function Naming](#function-naming)
 
 ## Pointers
 ### Pointers holds the memory address of the value
@@ -219,6 +221,22 @@ g := "Fish"                          // Short variable declaration
 func main() {
   var e, f bool                      // Variable declaration can be done within functions
   fmt.Println(a, b, c, d, e, f)
+}
+```
+
+## Constants
+
+```go
+package main
+
+import "fmt"
+
+const Pi = 3.14                      // Declared with a capital letter
+                                     // No shorthand available
+
+func main() {
+  const World = "Die Welt"
+  fmt.Println("Guten tag", World)
 }
 ```
 
