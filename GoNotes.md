@@ -1,31 +1,30 @@
 # Golang Notes
-##
 
-1. [Pointers](#pointers)
-2. [Structs](#structs)
-  2.1 [Assigning Struct to a variable](#assigning-struct-to-a-variable)
-  2.2 [Pointer to Struct](#pointer-to-struct)
-  2.3 [Struct Literals](#struct-literals)
-3. [Array](#array)
-4. [Slice](#slice)
-5. [Functions](#functions)
-  5.1 [Arguments and Return Value Type](#arguments-and-return-value-type)
-  5.2 [Named Return Values](#named-return-values)
-6. [Variables](#variables)
-  6.1 [Variable declaration](#variable-declarations)
-7. [Constants](#constants)
-8. [Types](#types)
-  8.1 [Basic types](#basic-types)
-  8.2 [Figuring out a variable's type](#figuring-out-a-variable's-type)
-9. [Type Conversion](#type-conversion)
-  9.1[Int to String](#int-to-string)
-10. [Conventions](#conventions)
-11. [Function Naming](#function-naming)
-12. [Loop](#loop)
-  12.1 [For loop using init and post statements](#for-loop-using-init-and-post-statements)
-  12.2 [For loop without init and post statements](#for-loop-without-init-and-post-statements)
-  12.3 [While loop in Go](#while-loop-in-go)
-  12.4 [Infinite loop](#infinite-loop)
+[Pointers](#pointers)</br>
+[Structs](#structs)</br>
+&nbsp;&nbsp;&nbsp;[Assigning Struct to a variable](#assigning-struct-to-a-variable)</br>
+&nbsp;&nbsp;&nbsp;[Pointer to Struct](#pointer-to-struct)</br>
+&nbsp;&nbsp;&nbsp;[Struct Literals](#struct-literals)</br>
+[Array](#array)</br>
+[Slice](#slice)</br>
+[Functions](#functions)</br>
+&nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)</br>
+&nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)</br>
+[Variables](#variables)</br>
+&nbsp;&nbsp;&nbsp;[Variable declaration](#variable-declaration)</br>
+[Constants](#constants)</br>
+[Types](#types)</br>
+&nbsp;&nbsp;&nbsp;[Basic types](#basic-types)</br>
+&nbsp;&nbsp;&nbsp;[Figuring out variable type](#figuring-out-variable-type)</br>
+[Type Conversion](#type-conversion)</br>
+&nbsp;&nbsp;&nbsp;[Int to String](#int-to-string)</br>
+[Conventions](#conventions)</br>
+[Function Naming](#function-naming)</br>
+[Loop](#loop)</br>
+&nbsp;&nbsp;&nbsp;[For loop using init and post statements](#for-loop-using-init-and-post-statements)</br>
+&nbsp;&nbsp;&nbsp;[For loop without init and post statements](#for-loop-without-init-and-post-statements)</br>
+&nbsp;&nbsp;&nbsp;[While loop in Go](#while-loop-in-go)</br>
+&nbsp;&nbsp;&nbsp;[Infinite loop](#infinite-loop)</br>
 
 
 ## Pointers
@@ -259,7 +258,7 @@ float32 float64
 complex64 complex128
 ```
 
-### Figuring out a variable's type
+### Figuring out variable type
 ```go
 package main
 
