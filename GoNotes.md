@@ -1,32 +1,32 @@
 # Golang Notes
 ##
 
-[Pointers](#pointers)
-[Structs](#structs)
-  - [Assigning Struct to a variable](#assigning-struct-to-a-variable)
-  - [Pointer to Struct](#pointer-to-struct)
-  - [Struct Literals](#struct-literals)
-[Array](#array)
-[Slice](#slice)
-[Functions](#functions)
-  - [Arguments and Return Value Type](#arguments-and-return-value-type)
-  - [Named Return Values](#named-return-values)
-[Variables](#variables)
-  - [Variable declaration](#variable-declarations)
-[Constants](#constants)
-[Types](#types)
-  - [Basic types](#basic-types)
-  - [Figuring out a variable's type](#figuring-out-a-variable's-type)
-[Type Conversion](#type-conversion)
-  - [Int to String](#int-to-string)
-[Conventions](#conventions)
-  - [Function Naming](#function-naming)
+1. [Pointers](#pointers)</br>
+2. [Structs](#structs)</br>
+  2.1 [Assigning Struct to a variable](#assigning-struct-to-a-variable)</br>
+  2.2 [Pointer to Struct](#pointer-to-struct)</br>
+  2.3 [Struct Literals](#struct-literals)</br>
+3. [Array](#array)</br>
+4. [Slice](#slice)</br>
+5. [Functions](#functions)</br>
+  5.1 [Arguments and Return Value Type](#arguments-and-return-value-type)</br>
+  5.2 [Named Return Values](#named-return-values)</br>
+6. [Variables](#variables)</br>
+  6.1 [Variable declaration](#variable-declarations)</br>
+7. [Constants](#constants)</br>
+8. [Types](#types)</br>
+  8.1 [Basic types](#basic-types)</br>
+  8.2 [Figuring out a variable's type](#figuring-out-a-variable's-type)</br>
+9. [Type Conversion](#type-conversion)</br>
+  9.1[Int to String](#int-to-string)</br>
+10. [Conventions](#conventions)</br>
+11. [Function Naming](#function-naming)</br>
 
-[Loop]
-  - [For loop using init and post statements](#for-loop-using-init-and-post-statements)
-  - [For loop without init and post statements](#for-loop-without-init-and-post-statements)
-  - [While loop in Go](#while-loop-in-go)
-  - [Infinite loop](#infinite-loop)
+12. [Loop]
+  12.1 [For loop using init and post statements](#for-loop-using-init-and-post-statements)</br>
+  12.2 [For loop without init and post statements](#for-loop-without-init-and-post-statements)</br>
+  12.3 [While loop in Go](#while-loop-in-go)</br>
+  12.4 [Infinite loop](#infinite-loop)</br>
 
 
 ## Pointers
