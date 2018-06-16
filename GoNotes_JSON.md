@@ -14,8 +14,8 @@ import (
 )
 
 type Country struct {
-    Name string    `json:"name"`        // `json:xxx` is called tags (Optional)
-    States []State `json:"states"` // Tags get the corresponding part of the json obj
+    Name string    `json:"name"`    // `json:xxx` is called tags (Optional)
+    States []State `json:"states"`  // Tags get the corresponding part of the json obj
 }
 
 type State struct {
