@@ -411,7 +411,7 @@ func (c *English) greeting() {
   fmt.Println("Hello")
 }
 
-func sayHello(l Language) {    // sayHello func takes Language interface, which accepts German and English.
+func sayHello(l Language) {    // sayHello takes the interface, solves the duplication
   l.greeting()
 }
 
@@ -422,8 +422,6 @@ func main() {
   sayHello(english)
 }
 ```
-
-
 
 ## Errors
 Go does not have exceptions, errors have to be handled manually
