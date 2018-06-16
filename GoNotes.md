@@ -355,9 +355,91 @@ func main() {
 }
 ```
 
+## Interface
+
+```go
+package main
+
+import "fmt"
+
+type German struct{}
+
+func (g *German) Hello() {
+  fmt.Println("Guten tag")
+}
+
+type English struct{}
+
+func (a *English) Hello() {
+  fmt.Println("Hello")
+}
+
+func helloInGerman(g *German) {
+  g.Hello()
+}
+
+func helloInEnglish(a *English) {
+  a.Hello()
+}
+
+func main() {
+  german := new(German)
+  english := new(English)
+  helloInGerman(german)             // a lot of duplications
+  helloInEnglish(english)
+}
+```
+
+```go
+package main
+
+import "fmt"
+
+type Language interface {       // Language Interface
+  greeting()
+}
+
+type German struct{}
+
+func (g *German) greeting() {
+  fmt.Println("Guten tag")
+}
+
+type English struct{}
+
+func (c *English) greeting() {
+  fmt.Println("Hello")
+}
+
+func sayHello(l Language) {    // sayHello func takes Language interface, which accepts German and English.
+  l.greeting()
+}
+
+func main() {
+  german := new(German)
+  english := new(English)
+  sayHello(german)
+  sayHello(english)
+}
+```
 
 
 
+## Errors
+Go does not have exceptions, errors have to be handled manually
+### Check if there's any error while running using console
+```shell
+errcheck       // returns error messages if there's any
+```
 
-
-
+## Testing
+Create a file for testing in the following manner
+```shell
+FILENAME_test.go        // insert "_test" after the file name
+```
+File name with _test will be ignored by
+```shell
+go get
+go install
+go build
+```
