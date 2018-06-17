@@ -25,6 +25,7 @@
 &nbsp;&nbsp;&nbsp;[For loop without init and post statements](#for-loop-without-init-and-post-statements)</br>
 &nbsp;&nbsp;&nbsp;[While loop in Go](#while-loop-in-go)</br>
 &nbsp;&nbsp;&nbsp;[Infinite loop](#infinite-loop)</br>
+[If statement](#if-statement)</br>
 
 
 ## Pointers
@@ -354,6 +355,28 @@ func main() {
   }
 }
 ```
+
+## If statement
+
+```go
+package main 
+
+import "fmt"
+
+func judge(x, y, max int) bool {
+  if z := x + y; z > max {
+    return true
+  }
+  return false
+}
+
+func main() {
+  fmt.Println(judge(5, 6, 10))
+  fmt.Println(judge(5, 4, 10))
+}
+```
+
+
 
 ## Interface
 
