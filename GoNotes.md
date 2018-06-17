@@ -26,6 +26,7 @@
 &nbsp;&nbsp;&nbsp;[While loop in Go](#while-loop-in-go)</br>
 &nbsp;&nbsp;&nbsp;[Infinite loop](#infinite-loop)</br>
 [If statement](#if-statement)</br>
+&nbsp;&nbsp;&nbsp;[If statement with variable assignment](#if-statement-with-variable-assignment)
 
 
 ## Pointers
@@ -357,6 +358,7 @@ func main() {
 ```
 
 ## If statement
+### If statement with variable assignment
 
 ```go
 package main 
@@ -364,7 +366,7 @@ package main
 import "fmt"
 
 func judge(x, y, max int) bool {
-  if z := x + y; z > max {
+  if z := x + y; z > max {             // variable assignment is optional
     return true
   }
   return false
