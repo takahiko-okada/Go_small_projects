@@ -361,15 +361,17 @@ func main() {
 ### If statement with variable assignment
 
 ```go
-package main 
+package main
 
 import "fmt"
 
-func judge(x, y, max int) bool {
-  if z := x + y; z > max {             // variable assignment is optional
+func judge(x, y, max int) bool, string {
+  if z := x + y; z > max {        // variable assignment is optional
     return true
+  } else {                        // else statement is optional
+    return false
   }
-  return false
+  return true
 }
 
 func main() {
@@ -378,9 +380,36 @@ func main() {
 }
 ```
 
+## Switch
+```go
+package main
 
+import (
+  "fmt"
+  "runtime"                        // package runtime contains operations that interact with Go's runtime system, such as functions to control goroutines. It includes low-level type information. See also "reflect" package.
+  )
+
+func main() {
+  fmt.Print("Go runs on ")
+  switch os: = runtime.GOOS; os {  // GOOS is the running program's operating system target: one of darwin, freebsd, linux, etc.
+    case "darwin":
+      fmt.Println("OS X.")
+    case "linux":
+      fmt.Println("Linux.")
+    default:
+    fmt.Printf("%s.", os)          // %s, the uninterpreted bytes of the string or slice. %q, double quoted string safely escaped with Go syntax.
+  }
+}
+```
 
 ## Interface
+Interface
+- is a set of methods.
+- it's also a type.
+
+An Empty interface ```interface{}``` is a type that has no methods, all types satisfy the empty interface.
+Therefore, you can supply the function that takes ```interface{}``` with any value.
+
 
 ```go
 package main
