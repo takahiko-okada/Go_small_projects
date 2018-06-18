@@ -26,7 +26,7 @@
 &nbsp;&nbsp;&nbsp;[While loop in Go](#while-loop-in-go)</br>
 &nbsp;&nbsp;&nbsp;[Infinite loop](#infinite-loop)</br>
 [If statement](#if-statement)</br>
-&nbsp;&nbsp;&nbsp;[If statement with variable assignment](#if-statement-with-variable-assignment)
+&nbsp;&nbsp;&nbsp;[If statement with variable assignment](#if-statement-with-variable-assignment)</br>
 [Switch](#switch)</br>
 &nbsp;&nbsp;&nbsp;[Switch without condition](#switch-without-condition)</br>
 [Defer](#defer)
