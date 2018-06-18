@@ -27,6 +27,10 @@
 &nbsp;&nbsp;&nbsp;[Infinite loop](#infinite-loop)</br>
 [If statement](#if-statement)</br>
 &nbsp;&nbsp;&nbsp;[If statement with variable assignment](#if-statement-with-variable-assignment)
+[Switch](#switch)</br>
+&nbsp;&nbsp;&nbsp;[Switch without condition](#switch-without-condition)</br>
+[Defer](#defer)
+
 
 
 ## Pointers
@@ -381,6 +385,9 @@ func main() {
 ```
 
 ## Switch
+
+Switch cases evaluate cases from top to bottom, stops when a case succeeds.
+
 ```go
 package main
 
@@ -400,6 +407,46 @@ func main() {
     fmt.Printf("%s.", os)          // %s, the uninterpreted bytes of the string or slice. %q, double quoted string safely escaped with Go syntax.
   }
 }
+```
+### Switch without condition
+
+```go
+package main
+
+import(
+  "fmt"
+  "time"
+  )
+
+func main() {
+  t := time.Now()
+  switch {                              // is the same as ```switch true```
+    case t.Hour() < 12:
+      fmt.Println("Good morning")
+    case t.Hour() < 17:
+      fmt.Println("Good afternoon.")
+    default:
+    fmt.Println("Good evening")
+  }
+}
+```
+
+## Defer
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  defer fmt.Println("a")
+  defer fmt.Println("b")
+
+  fmt.Println("c")                     // this returns c => d =>  b =>  a because Go evaluates lines from top to bottom and defer prioritizes the surrounding functions.
+
+  defer fmt.Println("d")
+}
+
 ```
 
 ## Interface
