@@ -1,5 +1,10 @@
 # Golang Notes
 
+tasks:
+- Split this note
+- How to organize additional notes on advanced topics related to the fundamental?
+- Publish this notes to a website and make it more user-friendly.
+
 [Pointers](#pointers)</br>
 [Structs](#structs)</br>
 &nbsp;&nbsp;&nbsp;[Assigning Struct to a variable](#assigning-struct-to-a-variable)</br>
