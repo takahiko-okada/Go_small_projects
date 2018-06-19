@@ -12,6 +12,8 @@ tasks:
 &nbsp;&nbsp;&nbsp;[Struct Literals](#struct-literals)</br>
 [Array](#array)</br>
 [Slice](#slice)</br>
+[Slice literals](#slice-litrals)</br>
+[Length and Capacity of slice](#length-and-capacity-of-slice)</br>
 [Functions](#functions)</br>
 &nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)</br>
 &nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)</br>
@@ -132,8 +134,8 @@ func main() {
 
 ```
 
-### Array
-#### Array size cannot be changed later, whereas Slice allows this.
+## Array
+Array size cannot be changed later, whereas Slice allows this.
 
 ```go
 package main
@@ -151,10 +153,10 @@ func main() {
 }
 ```
 
-### Slice
-#### Slices works as references to arrays
-#### A slice does not store any data, it shows a part of an array
-#### Modification to a slice will be reflected to its underlying array
+## Slice
+Slices works as references to arrays
+A slice does not store any data, it shows a part of an array
+Modification to a slice will be reflected to its underlying array
 
 ```go
 package main
@@ -174,6 +176,49 @@ func main() {
   fmt.Println(s1, s2, nations)
 }
 ```
+### Slice literals
+
+```go
+[3]bool{true, true, false}
+```
+is the same as
+```go
+[]bool{true, true, false}
+```
+
+### Length and Capacity of slice
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  s := []struct{
+    i int
+    b bool
+  } {
+      {1, true},
+      {2, false},
+      {3, true},
+      {4, true},
+      {5, true},
+  }
+  fmt.Println(s[:])         // these print out the same output
+  fmt.Println(s[:5])
+  fmt.Println(s[0:5])
+  fmt.Println(s[0:])
+  fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+
+  // %d => decimal number
+  // %v => the value in the default format
+  // length => num of elements in the slice
+  // capacity => num of elements in the underlying array
+}
+```
+
+* The zero value of a slice is ```nil.``` The length and capacity of a ```nil``` slice are both 0.
+
 
 ## Functions
 ### Arguments and Return Value Type
@@ -453,6 +498,10 @@ func main() {
 }
 
 ```
+
+
+
+
 
 ## Interface
 Interface
