@@ -12,8 +12,8 @@ tasks:
 &nbsp;&nbsp;&nbsp;[Struct Literals](#struct-literals)</br>
 [Array](#array)</br>
 [Slice](#slice)</br>
-[Slice literals](#slice-litrals)</br>
-[Length and Capacity of slice](#length-and-capacity-of-slice)</br>
+&nbsp;&nbsp;&nbsp;[Slice literals](#slice-literals)</br>
+&nbsp;&nbsp;&nbsp;[Length and Capacity of slice](#length-and-capacity-of-slice)</br>
 [Functions](#functions)</br>
 &nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)</br>
 &nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)</br>
