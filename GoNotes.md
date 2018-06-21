@@ -260,6 +260,31 @@ func main() {
 }
 ```
 
+### Appending to a slice
+Go provides a built-in ```apend``` function.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var s []string        // initialize a new empty slice
+  printSlice(s)
+
+  s = append(s, "A")
+  printSlice(s)
+
+  s = append(s, "B", "C", "D")   // append multiple items
+  printSlice(s)
+}
+
+func printSlice(s []string) {
+  fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+  // %d => base 10
+}
+```
+
 
 ## Functions
 ### Arguments and Return Value Type
