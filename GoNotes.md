@@ -219,6 +219,47 @@ func main() {
 
 * The zero value of a slice is ```nil.``` The length and capacity of a ```nil``` slice are both 0.
 
+### Creating a slice with make
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  a := make([]int, 5)    // creates a slice with 5 zeroes
+  b := make([]int, 2, 5) // creates a slice with 2 zeroes, capacity of 5
+}
+```
+
+### Slices of slices
+
+```go
+import (
+  "fmt"
+  "strings"
+  )
+
+func main() {
+  board := [][]string{
+    []string("_", "_", "_")       // a slice at index 0
+    []string("_", "_", "_")
+    []string("_", "_", "_")
+  }
+
+  board[0][0] = "X"
+  board[2][2] = "O"
+  board[1][2] = "X"
+  board[1][0] = "O"
+  board[0][2] = "X"
+
+  for i:= 0; i < len(board); i++ {
+    fmt.Printf("%s\n", strings.Join(board[i], " "))
+  }
+  // %s => the uninterpreted bytes of the string or slice
+}
+```
+
 
 ## Functions
 ### Arguments and Return Value Type
