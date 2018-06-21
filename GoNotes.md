@@ -301,6 +301,23 @@ func main() {
 }
 ```
 
+### Range loop
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  nums := []int{1, 2, 3, 4, 5}
+  for _, value := range nums {      // this allows skipping the index num
+    fmt.Printf("%d\n", value)
+  }
+}
+
+// in case only index numbers are needed, erase "value" instead of writing "_"
+```
+
 
 ## Functions
 ### Arguments and Return Value Type
