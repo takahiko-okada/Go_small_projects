@@ -285,6 +285,22 @@ func printSlice(s []string) {
 }
 ```
 
+## Range
+
+```go
+package main
+
+import "fmt"
+
+var nums = []int{1, 2, 3, 4, 5}
+
+func main() {
+  for i, v := range nums {
+    fmt.Printf("index:%d = %d\n", i, v)  // each %d corresponds with i and v
+  }
+}
+```
+
 
 ## Functions
 ### Arguments and Return Value Type
