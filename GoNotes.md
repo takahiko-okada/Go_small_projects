@@ -14,6 +14,11 @@ tasks:
 [Slice](#slice)</br>
 &nbsp;&nbsp;&nbsp;[Slice literals](#slice-literals)</br>
 &nbsp;&nbsp;&nbsp;[Length and Capacity of slice](#length-and-capacity-of-slice)</br>
+&nbsp;&nbsp;&nbsp;[Creating a slice with make](#creating-a-slice-with-make)
+&nbsp;&nbsp;&nbsp;[Slices of slices](#slices-of-slices)
+&nbsp;&nbsp;&nbsp;[Appending to a slice](#appending-to-a-slice)
+&nbsp;&nbsp;&nbsp;[Range](#range)
+&nbsp;&nbsp;&nbsp;[Range and loop](#range-and-loop)
 [Functions](#functions)</br>
 &nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)</br>
 &nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)</br>
@@ -301,7 +306,7 @@ func main() {
 }
 ```
 
-### Range loop
+### Range and loop
 
 ```go
 package main
