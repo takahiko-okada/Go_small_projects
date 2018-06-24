@@ -371,6 +371,8 @@ func main() {
 }
 
 ```
+
+
 ## Functions
 ### Arguments and Return Value Type
 ```go
@@ -390,6 +392,21 @@ func main() {
   fmt.Println(add(222, 777))
   fmt.Println(plusAndMinus(222, 777))
 }
+```
+
+### Mutating Maps
+```go
+m[key] = elem                               // INSERT or UPDATE
+
+delete(m, key)                              // DELETE
+
+elem = m[key]                               // RETRIEVE, GET
+
+elem, ok = m[key]                           // TEST if a key is present
+                                            // ok   => true / false
+                                            // elem => the element or zero in case the key doesn't
+
+elem, ok := m[key]                          // Use this shorthand if the elem or key hasn't been declared
 ```
 
 ### Named Return Values
