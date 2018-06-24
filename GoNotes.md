@@ -323,7 +323,54 @@ func main() {
 // in case only index numbers are needed, erase "value" instead of writing "_"
 ```
 
+## Maps
 
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+  Lat, Lng float64
+}
+
+var m map[string]Vertex
+
+func main() {
+  m = make(map[string]Vertex)    // make function initializes a map of the given type, which is Vertex.
+  m["Berlin"] = Vertex{
+    40.68433, -75.2134,
+  }
+  fmt.Println(m["Berlin"])
+}
+```
+
+### Map literals
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+  Lat, Lng float64
+}
+
+var m = map[string]Vertex{
+  "Tokyo": Vertex{
+    55.8273, -52.7373,
+  },                                    // Comma needed!
+  "Berin": Vertex{
+    13.7373, -52.8822,
+  },                                    // Comma needed!
+  "Shanghai": {66.3234, -76.2222},      // OK to omit type
+}
+
+func main() {
+  fmt.Println(m)
+}
+
+```
 ## Functions
 ### Arguments and Return Value Type
 ```go
