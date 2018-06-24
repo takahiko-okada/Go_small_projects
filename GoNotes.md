@@ -21,7 +21,7 @@ tasks:
 &nbsp;&nbsp;&nbsp;[Range and loop](#range-and-loop)</br>
 [Maps](#maps)</br>
 &nbsp;&nbsp;&nbsp;[Map literals](#map-literals)</br>
-&nbsp;&nbsp;&nbsp;[Mutating Maps](#mutating-maps)
+&nbsp;&nbsp;&nbsp;[Mutating Maps](#mutating-maps)</br>
 [Functions](#functions)</br>
 &nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)</br>
 &nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)</br>
