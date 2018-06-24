@@ -19,6 +19,9 @@ tasks:
 &nbsp;&nbsp;&nbsp;[Appending to a slice](#appending-to-a-slice)</br>
 &nbsp;&nbsp;&nbsp;[Range](#range)</br>
 &nbsp;&nbsp;&nbsp;[Range and loop](#range-and-loop)</br>
+[Maps](#maps)</br>
+&nbsp;&nbsp;&nbsp;[Map literals](#map-literals)</br>
+&nbsp;&nbsp;&nbsp;[Mutating Maps](#mutating-maps)
 [Functions](#functions)</br>
 &nbsp;&nbsp;&nbsp;[Arguments and Return Value Type](#arguments-and-return-value-type)</br>
 &nbsp;&nbsp;&nbsp;[Named Return Values](#named-return-values)</br>
@@ -372,6 +375,20 @@ func main() {
 
 ```
 
+### Mutating Maps
+```go
+m[key] = elem                               // INSERT or UPDATE
+
+delete(m, key)                              // DELETE
+
+elem = m[key]                               // RETRIEVE, GET
+
+elem, ok = m[key]                           // TEST if a key is present
+                                            // ok   => true / false
+                                            // elem => the element or zero in case the key doesn't
+
+elem, ok := m[key]                          // Use this shorthand if the elem or key hasn't been declared
+```
 
 ## Functions
 ### Arguments and Return Value Type
@@ -394,20 +411,6 @@ func main() {
 }
 ```
 
-### Mutating Maps
-```go
-m[key] = elem                               // INSERT or UPDATE
-
-delete(m, key)                              // DELETE
-
-elem = m[key]                               // RETRIEVE, GET
-
-elem, ok = m[key]                           // TEST if a key is present
-                                            // ok   => true / false
-                                            // elem => the element or zero in case the key doesn't
-
-elem, ok := m[key]                          // Use this shorthand if the elem or key hasn't been declared
-```
 
 ### Named Return Values
 
@@ -426,6 +429,14 @@ func main() {
   fmt.Println(split(100))
 }
 ```
+
+### Function values
+Functions are also values, which can be passed just like other values.
+Function values can be used as function arguments and return values.
+```go
+
+```
+
 
 ## Variables
 ### Variable declaration
