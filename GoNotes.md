@@ -705,12 +705,50 @@ func (v Vertex) Abs() float64 {
 
 func main() {
   v := Vertex{3, 4}
-  fmt.Println(v.Abs())
+  fmt.Println(v.Abs())                  // Note the v.Abs()
 }
 ```
+The following code does the same as the code above
 
+```go
+type Vertex struct {
+  X, Y float64
+}
 
+func Abs(v Vertex) float64 {
+  return math.Sqrt(v.X*v.X + v.Y *v.Y)
+}
 
+func main() {
+  v := Vertex{3, 4}
+  fmt.Println(Abs(v))
+}
+```
+It is possible to declare a method on non-struct type.
+* The type of the receiver of a method must be declared in the same package.
+
+```go
+package main
+
+import (
+  "fmt"
+  "math"
+)
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+  if f < 0 {
+    return float64(-f)
+  }
+  return float64(f)
+}
+
+func main() {
+  f := MyFloat(-math.Sqrt2)
+  fmt.Println(f.Abs())
+}
+```
 
 ## Interface
 Interface
