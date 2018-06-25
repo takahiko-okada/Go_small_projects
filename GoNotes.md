@@ -48,6 +48,8 @@ tasks:
 
 
 
+
+
 ## Pointers
 ### Pointers holds the memory address of the value
 
@@ -678,6 +680,34 @@ func main() {
 
 ```
 
+
+## Methods
+Go does not have classes. However, it is possible to define methods on types.
+
+A method is a function with a special receiver argument.
+Receiver is located in between ```func``` and the method name.
+
+```go
+package main
+
+import (
+  "fmt"
+  "math"
+  )
+
+type Vertex struct {
+  X, Y float64
+}
+
+func (v Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)   // v.X => X element in v, which is 3 in the Vertex struct {3, 4}
+}
+
+func main() {
+  v := Vertex{3, 4}
+  fmt.Println(v.Abs())
+}
+```
 
 
 
