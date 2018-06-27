@@ -750,6 +750,40 @@ func main() {
 }
 ```
 
+## Pointers and functions
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {                      // Define type Vertex
+  X, Y float64
+}
+
+func (v *Vertex) Scale(f float64) {       // Scale method has a pointer receiver! IMPORTANT
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+
+func ScaleFunc(v *Vertex, f float64) {
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+
+func main() {
+  v := Vertex(3, 4)
+  v.Scale(2)                              // this will be interpreted as (&v).Scale(5) because func Scale has a pointer receiver for v!
+  ScaleFunc(&v, 10)
+
+  p := &Vertex(4, 3)
+  p.Scale(3)                              // This works too.
+  ScaleFunc(p, 8)                         // ScaleFunc takes a pointer receiver. So this works.
+
+  fmt.Println(v, p)
+}
+```
+
 ## Interface
 Interface
 - is a set of methods.
