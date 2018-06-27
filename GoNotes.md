@@ -17,7 +17,7 @@ tasks:
 &nbsp;&nbsp;&nbsp;[Creating a slice with make](#creating-a-slice-with-make)</br>
 &nbsp;&nbsp;&nbsp;[Slices of slices](#slices-of-slices)</br>
 &nbsp;&nbsp;&nbsp;[Appending to a slice](#appending-to-a-slice)</br>
-&nbsp;&nbsp;&nbsp;[Range](#range)</br>
+[Range](#range)</br>
 &nbsp;&nbsp;&nbsp;[Range and loop](#range-and-loop)</br>
 [Maps](#maps)</br>
 &nbsp;&nbsp;&nbsp;[Map literals](#map-literals)</br>
