@@ -44,7 +44,9 @@ tasks:
 &nbsp;&nbsp;&nbsp;[If statement with variable assignment](#if-statement-with-variable-assignment)</br>
 [Switch](#switch)</br>
 &nbsp;&nbsp;&nbsp;[Switch without condition](#switch-without-condition)</br>
-[Defer](#defer)
+[Defer](#defer)</br>
+[Methods](#methods)</br>
+[Pointers and functions](#pointers-and-functions)</br>
 
 
 
