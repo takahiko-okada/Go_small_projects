@@ -48,6 +48,7 @@ tasks:
 [Methods](#methods)</br>
 [Pointers and functions](#pointers-and-functions)</br>
 [Methods and pointer indirection](#methods-and-pointer-indirection)</br>
+[Functions and Methods](#functions-and-methods)</br>
 
 
 
@@ -834,7 +835,7 @@ type Vertex struct {
   X, Y float64
 }
 
-func (v Vertex) TestMethod(f float64) float64 {
+func (v Vertex) TestMethod(f float64) float64 {   // Methods take a receiver (v, Vertex) in this case.
   s := v.X + v.Y + f
   fmt.Println(s)
   return s
@@ -842,12 +843,13 @@ func (v Vertex) TestMethod(f float64) float64 {
 
 func main() {
   num := Vertex{1, 2}
-  num.TestMethod(5)
+  num.TestMethod(5)                         // Methods are called on a variable
 }
 
 func TestFunction(v, f float64) float64 {
   return v + f
 }
+
 // Usage:
 // TestFunction(1, 2)
 ```
