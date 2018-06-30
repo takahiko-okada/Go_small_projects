@@ -47,6 +47,7 @@ tasks:
 [Defer](#defer)</br>
 [Methods](#methods)</br>
 [Pointers and functions](#pointers-and-functions)</br>
+[Methods and pointer indirection](#methods-and-pointer-indirection)</br>
 
 
 
@@ -753,7 +754,7 @@ func main() {
 ```
 
 ## Pointers and functions
-
+Functions with a pointer argument must take a pointer.
 ```go
 package main
 
@@ -776,14 +777,79 @@ func ScaleFunc(v *Vertex, f float64) {
 func main() {
   v := Vertex(3, 4)
   v.Scale(2)                              // this will be interpreted as (&v).Scale(5) because func Scale has a pointer receiver for v!
-  ScaleFunc(&v, 10)
+  ScaleFunc(&v, 10)                       // This is a "function"
 
   p := &Vertex(4, 3)
-  p.Scale(3)                              // This works too.
+  p.Scale(3)                              // This is a "method", works too.
   ScaleFunc(p, 8)                         // ScaleFunc takes a pointer receiver. So this works.
 
   fmt.Println(v, p)
 }
+```
+
+## Methods and pointer indirection
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+  X, Y float64
+}
+
+func (v *Vertex) Scale(f float64) {      // takes a pointer receiver, also a receiver(without pointer *) is acceptable
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+
+func ScaleFunc(v *Vertex, f foat64) {    // Function with a pointer argument
+  v.X = v.X * f
+  v.Y = v.Y * f
+}
+
+func main() {
+  v := Vertex{3, 4}
+  v.Scale(2)
+  ScaleFunc(&v, 10)     // ScaleFunc takes a pointer receiver
+
+  p := &Vertex{4, 3}
+  p.Scale(3)            // Methods with pointer receivers take either a value or a pointer as the receiver.
+  ScaleFunc(p, 8)
+
+  fmt.Println(v, p)
+}
+```
+
+## Functions and Methods
+
+In Go, a function that takes a receiver (or pointer receiver) is usually called a method.
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+  X, Y float64
+}
+
+func (v Vertex) TestMethod(f float64) float64 {
+  s := v.X + v.Y + f
+  fmt.Println(s)
+  return s
+}
+
+func main() {
+  num := Vertex{1, 2}
+  num.TestMethod(5)
+}
+
+func TestFunction(v, f float64) float64 {
+  return v + f
+}
+// Usage:
+// TestFunction(1, 2)
 ```
 
 ## Interface
