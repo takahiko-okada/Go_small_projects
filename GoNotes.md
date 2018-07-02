@@ -1018,6 +1018,38 @@ func (v *Vertex) Abs() float64 {
 }
 ```
 
+## Implicit implementation of interfaces
+
+```go
+package main
+
+import "fmt"
+
+type I interface {
+  M()
+}
+
+type T struct {
+  S string
+}
+
+func (t T) M() {
+  fmt.Println(t.S)  // t.S => retrieves S in struct t.
+}
+
+func main() {
+  var i I = T{"hello"}
+  i.M()
+}
+
+// assigns T{"hello"} to the variable i, which is of type I, which is an interface type, which has M().
+
+// interface attaches the methods defined in the interface?
+
+// And applies the methods that have receivers with the same type as the variable's(in this case i) type.
+
+```
+
 ## Errors
 Go does not have exceptions, errors have to be handled manually
 ### Check if there's any error while running using console
