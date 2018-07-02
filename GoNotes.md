@@ -892,9 +892,9 @@ func main() {
 
 
 ## Interface
-Interface
-- is a set of methods.
-- it's also a type.
+An interface is a set of method signitures(method names).
+It's a type.
+
 
 An Empty interface ```interface{}``` is a type that has no methods, all types satisfy the empty interface.
 Therefore, you can supply the function that takes ```interface{}``` with any value.
@@ -978,7 +978,7 @@ import (
   "math"
 )
 
-type Abser interface {   // An interface type is defined as a set of method signatures(?)
+type Abser interface {   // An interface type is defined as a set of method signatures(method names).
   Abs() float64
 }
 
@@ -994,7 +994,9 @@ a = v        // This line causes an error because Abs is defined only on *Vertex
 fmt.Println(a.Abs())
 }
 
-// There are two Abs() defined below.
+// There are two Abs() defined below, each for type MyFloat and Vertex.
+// Interface automatically chooses a method with a receiver of the same type as the variable(?).
+
 
 type MyFloat float64
 
@@ -1004,6 +1006,8 @@ func (f MyFloat) Abs() float64 {
     }
     return float64(f)
 }
+
+
 
 type Vertex struct {
   X, Y float64
