@@ -49,7 +49,9 @@ tasks:
 [Pointers and functions](#pointers-and-functions)</br>
 [Methods and pointer indirection](#methods-and-pointer-indirection)</br>
 [Functions and Methods](#functions-and-methods)</br>
-[A value or a pointer](#a-value-or-a-pointer)
+[A value or a pointer](#a-value-or-a-pointer)</br>
+[Interface](#interface)</br>
+[Interface2](#interface2)</br>
 
 
 
