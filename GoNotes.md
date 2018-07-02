@@ -49,7 +49,7 @@ tasks:
 [Pointers and functions](#pointers-and-functions)</br>
 [Methods and pointer indirection](#methods-and-pointer-indirection)</br>
 [Functions and Methods](#functions-and-methods)</br>
-
+[A value or a pointer](#a-value-or-a-pointer)
 
 
 
@@ -961,6 +961,54 @@ func main() {
   english := new(English)
   sayHello(german)
   sayHello(english)
+}
+```
+
+## Interface2
+
+A value of interface type can hold any value that implements those methods.
+
+```go
+package main
+
+import (
+  "fmt"
+  "math"
+)
+
+type Abser interface {   // An interface type is defined as a set of method signatures(?)
+  Abs() float64
+}
+
+func main() {
+  var a Abser
+  f := MyFloat(-math.Sqrt2)
+  v := Vertex{3, 4}
+a = f
+a = &v
+
+a = v        // This line causes an error because Abs is defined only on *Vertex (the pointer type).
+
+fmt.Println(a.Abs())
+}
+
+// There are two Abs() defined below.
+
+type MyFloat float64
+
+func (f MyFloat) Abs() float64 {
+    if f < 0 {
+      retrun float64(-f)
+    }
+    return float64(f)
+}
+
+type Vertex struct {
+  X, Y float64
+}
+
+func (v *Vertex) Abs() float64 {
+  return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 ```
 
