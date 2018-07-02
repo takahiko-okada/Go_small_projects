@@ -46,12 +46,13 @@ tasks:
 &nbsp;&nbsp;&nbsp;[Switch without condition](#switch-without-condition)</br>
 [Defer](#defer)</br>
 [Methods](#methods)</br>
-[Pointers and functions](#pointers-and-functions)</br>
-[Methods and pointer indirection](#methods-and-pointer-indirection)</br>
-[Functions and Methods](#functions-and-methods)</br>
-[A value or a pointer](#a-value-or-a-pointer)</br>
+&nbsp;&nbsp;&nbsp;[Pointers and functions](#pointers-and-functions)</br>
+&nbsp;&nbsp;&nbsp;[Methods and pointer indirection](#methods-and-pointer-indirection)</br>
+&nbsp;&nbsp;&nbsp;[Functions and Methods](#functions-and-methods)</br>
+&nbsp;&nbsp;&nbsp;[A value or a pointer](#a-value-or-a-pointer)</br>
 [Interface](#interface)</br>
-[Interface2](#interface2)</br>
+&nbsp;&nbsp;&nbsp;[Interface2](#interface2)</br>
+&nbsp;&nbsp;&nbsp;[Implicit implementation of interfaces](#implicit-implementation-of-interfaces)</br>
 
 
 
