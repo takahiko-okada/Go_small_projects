@@ -1051,6 +1051,36 @@ func main() {
 
 ```
 
+## Go routines
+
+Goroutine = lightweight thread managed by Go runtime.
+```go
+go f(x, y, z) // f, x, y, z evaluated in the current goroutine, f executed in the new goroutine.
+
+f(x, y, z)    // this is a new goroutine running
+```
+
+```go
+package main
+
+import (
+  "fmt"
+  "time"
+)
+
+func say(s string) {
+  for i := 0; i < 5; i++ {
+    time.Sleep(100 * time.Millisecond)
+    fmt.Println(s)
+  }
+}
+
+func main() {
+  go say("world")      // without "go" => 5 "world" then 5 "hello"
+  say("hello")
+}
+```
+
 ## Errors
 Go does not have exceptions, errors have to be handled manually
 ### Check if there's any error while running using console
