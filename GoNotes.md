@@ -53,6 +53,7 @@ tasks:
 [Interface](#interface)</br>
 &nbsp;&nbsp;&nbsp;[Interface2](#interface2)</br>
 &nbsp;&nbsp;&nbsp;[Implicit implementation of interfaces](#implicit-implementation-of-interfaces)</br>
+[Go routines](#go-routines)</br>
 
 
 
